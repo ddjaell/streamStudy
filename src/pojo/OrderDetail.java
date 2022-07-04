@@ -18,39 +18,44 @@ public class OrderDetail {
         return id;
     }
 
-    public void setId(long id) {
+    public OrderDetail setId(long id) {
         this.id = id;
+        return this;
     }
 
     public OrderType getOrderType() {
         return orderType;
     }
 
-    public void setOrderType(OrderType orderType) {
+    public OrderDetail setOrderType(OrderType orderType) {
         this.orderType = orderType;
+        return this;
     }
 
     public long getProductId() {
         return productId;
     }
 
-    public void setProductId(long productId) {
+    public OrderDetail setProductId(long productId) {
         this.productId = productId;
+        return this;
     }
 
     public int getQty() {
         return qty;
     }
 
-    public void setQty(int qty) {
+    public OrderDetail setQty(int qty) {
         this.qty = qty;
+        return this;
     }
 
     public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public OrderDetail setAmount(BigDecimal amount) {
         this.amount = amount;
+        return this;
     }
 }

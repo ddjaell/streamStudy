@@ -64,4 +64,25 @@ public class Order {
         this.orderStatus = orderStatus;
         return this;
     }
+
+    public List<OrderDetail> getOrderDetailList() {
+        return orderDetailList;
+    }
+
+    public Order setOrderDetailList(List<OrderDetail> orderDetailList) {
+        this.orderDetailList = orderDetailList;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", createdAt=" + createdAt +
+                ", userId=" + userId +
+                ", orderStatus=" + orderStatus +
+                ", amount=" + amount +
+                ", orderDetailList=" + orderDetailList +
+                '}';
+    }
 }
