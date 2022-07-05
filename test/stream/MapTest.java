@@ -48,7 +48,8 @@ public class MapTest {
                 .setEmailAddress("jerryOh@google.com");
 
         List<User> userList = Arrays.asList(user1, user2, user3);
-        List<String> userEmailList = userList.stream().map(User::getEmailAddress).collect(Collectors.toList());
+        List<String> userEmailList = userList.stream().map(user -> user.getEmailAddress().orElse("no email")).collect(Collectors.toList());
+
         Assert.assertEquals("johnKim@google.com", userEmailList.get(0));
     }
 
@@ -129,7 +130,7 @@ public class MapTest {
         List<String> unverifiedEmailList = new ArrayList<>();
         for(User user : userList){
             if(!user.isVerified()){
-                unverifiedEmailList.add(user.getEmailAddress());
+                unverifiedEmailList.add(user.getEmailAddress().orElse("no email"));
             }
         }
         Assert.assertEquals("tomLee@google.com", unverifiedEmailList.get(0));
@@ -137,7 +138,7 @@ public class MapTest {
 
         unverifiedEmailList = userList.stream()
                 .filter(user -> !user.isVerified())
-                .map(User::getEmailAddress)
+                .map(user -> user.getEmailAddress().orElse("no email"))
                 .collect(Collectors.toList());
         Assert.assertEquals("tomLee@google.com", unverifiedEmailList.get(0));
     }

@@ -2,6 +2,7 @@ package pojo;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class User {
     private int id;
@@ -67,8 +68,8 @@ public class User {
         return name;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public Optional<String> getEmailAddress() {
+        return Optional.ofNullable(emailAddress);
     }
 
     public boolean isVerified() {
