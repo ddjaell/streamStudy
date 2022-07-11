@@ -50,6 +50,17 @@ public class OrderDetail {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "OrderDetail{" +
+                "id=" + id +
+                ", orderType=" + orderType +
+                ", productId=" + productId +
+                ", qty=" + qty +
+                ", amount=" + amount +
+                '}';
+    }
+
     public BigDecimal getAmount() {
         return amount;
     }
